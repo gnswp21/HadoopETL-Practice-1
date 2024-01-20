@@ -3,6 +3,7 @@ package com.aaa.etl.pojo;
 import com.aaa.etl.util.CustomFloatDeserializer;
 import com.aaa.etl.util.DefaultLocalDateTimeDeserializer;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -46,44 +47,46 @@ public class EtlColumnPojo {
     @JsonProperty("title")
     private String title;
 
-    @JsonProperty("observation_start")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    @JsonDeserialize(using = LocalDateDeserializer.class)
-    private LocalDateTime observation_start;
+    @JsonProperty("state")
+    private String state;
 
-    @JsonProperty("observation_end")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    @JsonDeserialize(using = LocalDateDeserializer.class)
-    private LocalDateTime observation_end;
-
-    @JsonProperty("frequency")
-    private String frequency;
 
     @JsonProperty("frequency_short")
     private String frequency_short;
 
-    @JsonProperty("units")
-    private String units;
-
     @JsonProperty("units_short")
     private String units_short;
-
-    @JsonProperty("seasonal_adjustment")
-    private String seasonal_adjustment;
 
     @JsonProperty("seasonal_adjustment_short")
     private String seasonal_adjustment_short;
 
-    @JsonProperty("last_updated")
-    @JsonDeserialize(using = DefaultLocalDateTimeDeserializer.class)
-    private String last_updated;
+    @Override
+    public String toString(){
+        return "EtlColumnPojo [realtime_start=" + realtime_start
+                + ", realtime_end=" + realtime_end + ", title=" + title
+                + ", date=" + date + ", value=" + value + ", id=" + id
+                + ", frequency_short=" + frequency_short
+                + ", units_short=" + units_short
+                + ", seasonal_adjustment_short=" + seasonal_adjustment_short + "]";
 
-    @JsonProperty("popularity")
-    private String popularity;
+    }
 
-    @JsonProperty("group_popularity")
-    private String group_popularity;
+    @JsonIgnore
+    public String getValues(){
+        String values = realtime_start + "," + realtime_end + "," + date  + ","
+                + value + "," + id  + "," + title  + "," + state  + "," + frequency_short
+                + "," + units_short  + "," + seasonal_adjustment_short;
+        return values;
 
-    @JsonProperty("notes")
-    private String notes;
+    }
+
+    @JsonIgnore
+    public String getColumns(){
+        String columns = "realtime_start" + "," + "realtime_end" + "," + "date"  + ","
+                + "value" + "," + "id"  + "," + "title"  + "," + "state"  + "," + "frequency_short"
+                + "," + "units_short"  + "," + "seasonal_adjustment_short";
+        return columns;
+
+    }
+
 }

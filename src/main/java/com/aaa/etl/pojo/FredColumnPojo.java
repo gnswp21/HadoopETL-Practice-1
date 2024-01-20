@@ -77,7 +77,7 @@ public class FredColumnPojo {
 
     @Override
     public String toString(){
-        return "com.aaa.etl.pojo.FredColumnPojo [id=" + id + ", realtime_end=" + realtime_start
+        return "FredColumnPojo [id=" + id + ", realtime_start=" + realtime_start
                 + ", realtime_end=" + realtime_end + ", title=" + title
                 + ", observation_start=" + observation_start + ", observation_end=" + observation_end
                 + ", frequency=" + frequency + ", frequency_short=" + frequency_short
