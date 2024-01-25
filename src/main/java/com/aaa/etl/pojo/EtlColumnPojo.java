@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import lombok.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
@@ -25,12 +25,12 @@ public class EtlColumnPojo {
     @JsonProperty("realtime_start")
     @JsonFormat(pattern = "yyyy-MM-dd")
     @JsonDeserialize(using = LocalDateDeserializer.class)
-    private LocalDateTime realtime_start;
+    private LocalDate realtime_start;
 
     @JsonProperty("realtime_end")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @JsonDeserialize(using = LocalDateDeserializer.class)
-    private LocalDateTime realtime_end;
+    private LocalDate realtime_end;
 
     @JsonProperty("date")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
@@ -39,7 +39,7 @@ public class EtlColumnPojo {
 
     @JsonDeserialize(using = CustomFloatDeserializer.class) // "." 값 처리
     @JsonProperty("value")
-    private String value;
+    private Float value;
 
     @JsonProperty("id")
     private String id;

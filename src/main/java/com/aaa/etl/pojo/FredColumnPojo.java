@@ -10,6 +10,7 @@ import lombok.Setter;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -24,12 +25,12 @@ public class FredColumnPojo {
     @JsonProperty("realtime_start")
     @JsonFormat(pattern = "yyyy-MM-dd")
     @JsonDeserialize(using = LocalDateDeserializer.class)
-    private LocalDateTime realtime_start;
+    private LocalDate realtime_start;
 
     @JsonProperty("realtime_end")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @JsonDeserialize(using = LocalDateDeserializer.class)
-    private LocalDateTime realtime_end;
+    private LocalDate realtime_end;
 
     @JsonProperty("title")
     private String title;
@@ -37,12 +38,12 @@ public class FredColumnPojo {
     @JsonProperty("observation_start")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @JsonDeserialize(using = LocalDateDeserializer.class)
-    private LocalDateTime observation_start;
+    private LocalDate observation_start;
 
     @JsonProperty("observation_end")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @JsonDeserialize(using = LocalDateDeserializer.class)
-    private LocalDateTime observation_end;
+    private LocalDate observation_end;
 
     @JsonProperty("frequency")
     private String frequency;
@@ -64,13 +65,13 @@ public class FredColumnPojo {
 
     @JsonProperty("last_updated")
     @JsonDeserialize(using = DefaultLocalDateTimeDeserializer.class)
-    private String last_updated;
+    private LocalDateTime last_updated;
 
     @JsonProperty("popularity")
-    private String popularity;
+    private short popularity;
 
     @JsonProperty("group_popularity")
-    private String group_popularity;
+    private short group_popularity;
 
     @JsonProperty("notes")
     private String notes;

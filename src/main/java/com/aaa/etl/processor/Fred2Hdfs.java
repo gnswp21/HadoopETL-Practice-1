@@ -86,14 +86,13 @@ public class Fred2Hdfs {
         String fileType = "json";
         String searchUrl = fredUrl + APITYPE.valueOf("SEARCH").apiType + "?search_text=" +
                 searchText.replace(' ', '+') + state.getValueFullName().replaceAll(" ", "+") +
-                "&apiKey=" + apikey + "&file_type=" + fileType;
+                "&api_key=" + apikey + "&file_type=" + fileType;
 
         System.out.println(searchUrl);
 
         JsonNode rootNode = mapper.readTree(new URL(searchUrl));
         Thread.sleep(500);
-        // TODO check spelling
-        ArrayNode nodeSeries = (ArrayNode)rootNode.get("series");
+        ArrayNode nodeSeries = (ArrayNode)rootNode.get("seriess");
         List<FredColumnPojo> listFredData =
                 mapper.readValue(nodeSeries.traverse(), new TypeReference<List<FredColumnPojo>>() {});
 
