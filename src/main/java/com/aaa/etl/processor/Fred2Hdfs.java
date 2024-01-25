@@ -103,7 +103,7 @@ public class Fred2Hdfs {
                         fred.getSeasonal_adjustment_short().equals("NSA"));
 
         List<EtlColumnPojo> listData = listFredData.stream().filter(predi).flatMap(pojo -> {
-            String observUrl = fredUrl + APITYPE.valueOf("OBSERVATION").apiType + "?series_id" + pojo.getId()
+            String observUrl = fredUrl + APITYPE.valueOf("OBSERVATION").apiType + "?series_id=" + pojo.getId()
                     + "&api_key=" + apikey + "&file_type=" + fileType;
 
             System.out.println(observUrl);

@@ -39,24 +39,24 @@ public class EtlFileUploader2Hdfs {
 
         Fred2Hdfs fred = new Fred2Hdfs();
 
-//        System.out.println("========================== Unemployee Annual");
-//
-//        fred.clearInputFiles("src/main/outputs/", "unemployee_annual.csv");
-//
-//        for (US_STATES state : US_STATES.values()){
-//            List<EtlColumnPojo> etlUnemployeeDataAnnual =
-//                    fred.getEtlListData(Fred2Hdfs.FREQUENCY.YEAR, state, titleUnemployee);
-//            fred.writeCsv2Hdfs("unemployee_annual.csv", etlUnemployeeDataAnnual);
-//
-//
-//            if (state.ordinal() == 0){
-//                fred.writeCsv2Local(true, "src/main/outputs/", "unemployee_annual.csv",
-//                        etlUnemployeeDataAnnual );
-//            } else{
-//                fred.writeCsv2Local(false, "src/main/outputs/", "unemployee_annual.csv",
-//                        etlUnemployeeDataAnnual );
-//            }
-//        }
+        System.out.println("========================== Unemployee Annual");
+
+        fred.clearInputFiles("src/main/outputs/", "unemployee_annual.csv");
+
+        for (US_STATES state : US_STATES.values()){
+            List<EtlColumnPojo> etlUnemployeeDataAnnual =
+                    fred.getEtlListData(Fred2Hdfs.FREQUENCY.YEAR, state, titleUnemployee);
+            fred.writeCsv2Hdfs("unemployee_annual.csv", etlUnemployeeDataAnnual);
+
+
+            if (state.ordinal() == 0){
+                fred.writeCsv2Local(true, "src/main/outputs/", "unemployee_annual.csv",
+                        etlUnemployeeDataAnnual );
+            } else{
+                fred.writeCsv2Local(false, "src/main/outputs/", "unemployee_annual.csv",
+                        etlUnemployeeDataAnnual );
+            }
+        }
 
         System.out.println("========================== Real Median Household Income");
 
@@ -196,7 +196,6 @@ public class EtlFileUploader2Hdfs {
 
         fred.closeStream();
 
-        System.out.println("========================== Earnings");
 
 
     }

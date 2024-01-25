@@ -35,7 +35,7 @@ public class EtlColumnPojo {
     @JsonProperty("date")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @JsonDeserialize(using = LocalDateDeserializer.class)
-    private String date;
+    private LocalDate date;
 
     @JsonDeserialize(using = CustomFloatDeserializer.class) // "." 값 처리
     @JsonProperty("value")
