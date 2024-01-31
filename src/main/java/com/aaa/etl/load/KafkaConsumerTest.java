@@ -24,7 +24,7 @@ public class KafkaConsumerTest {
         Consumer<String, String> consumer =
                 new KafkaConsumer<>(kafkaConsProperty);
 
-        consumer.subscribe(Collections.singletonList("topic_house_income_ann"));
+        consumer.subscribe(Collections.singletonList("topic_unempl_ann"));
 
         String message = null;
 
