@@ -8,12 +8,7 @@ Hadoop -> kafka -> spark -> mysql 로 이루어진 데이터 파이프라인 API
 
 ### 사용된 기술
 
-<img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white">
-<img src="https://img.shields.io/badge/HADOOP-66CCFF?style=for-the-badge&logo=HADOOP&logoColor=white">
-<img src="https://img.shields.io/badge/KAFKA-231F20?style=for-the-badge&logo=KAFKA&logoColor=white">
-<img src="https://img.shields.io/badge/APACHE_SPARK-E25A1C?style=for-the-badge&logo=KAFKA&logoColor=white">
-<img src="https://img.shields.io/badge/MYSQL-4479A1?style=for-the-badge&logo=KAFKA&logoColor=white">
-
+<img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"><img src="https://img.shields.io/badge/HADOOP-66CCFF?style=for-the-badge&logo=HADOOP&logoColor=white"><img src="https://img.shields.io/badge/KAFKA-231F20?style=for-the-badge&logo=KAFKA&logoColor=white"><img src="https://img.shields.io/badge/APACHE_SPARK-E25A1C?style=for-the-badge&logo=KAFKA&logoColor=white"><img src="https://img.shields.io/badge/MYSQL-4479A1?style=for-the-badge&logo=KAFKA&logoColor=white">
 
 ### 목적
 하둡 생태계의 API 사용 방법 튜토리얼
