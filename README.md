@@ -34,7 +34,8 @@ HadoopETL-Practice-1/src/main/java/com/aaa/etl/load/
 - 하둡, 카프카 클러스터 설정
 - 도커 환경에서 실행
 
-
+## 참고
+자바와 파이썬으로 배우는 빅테이터 시스템
 
 ---
 ### 커밋 규칙
